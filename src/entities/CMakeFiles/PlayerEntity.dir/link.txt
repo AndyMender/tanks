@@ -1,0 +1,2 @@
+/usr/bin/ar qc libPlayerEntity.a  CMakeFiles/PlayerEntity.dir/player.cpp.o
+/usr/bin/ranlib libPlayerEntity.a
