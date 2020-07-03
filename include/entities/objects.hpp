@@ -8,7 +8,9 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
+#include <config.hpp>
 
 enum class Directions {
 	LEFT,
@@ -29,6 +31,13 @@ enum class Behaviors {
 	MOVE,
 	SHOOT,
 	HIT
+};
+
+const std::vector<std::vector<int>> SpawnPoints = {
+		{ 150, 150 },
+		{ 150, ScreenHeight - 150 },
+		{ ScreenWidth - 150, 150 },
+		{ ScreenWidth - 150, ScreenHeight - 150 }
 };
 
 // TODO: implement as POD classes with a proper hierarchy?

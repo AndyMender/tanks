@@ -247,15 +247,17 @@ void Engine::update() {
 void Engine::spawnEnemies() {
 	// initialize enemies at random
 	if (std::rand() % 100 == 0) {
-		// pick position
-		const int randomX = std::rand() % ScreenWidth;
-		const int randomY = std::rand() % ScreenHeight;
+		// pick position from
+		int x, y;
+		const int randomPos = std::rand() % static_cast<int>(SpawnPoints.size());
+		x = SpawnPoints[randomPos][0];
+		y = SpawnPoints[randomPos][1];
 
 		// template and spawn enemy
 		// TODO: load from file template!
 		EntityBlueprint enemyBlueprint;
-		enemyBlueprint.x = randomX;
-		enemyBlueprint.y = randomY;
+		enemyBlueprint.x = x;
+		enemyBlueprint.y = y;
 		enemyBlueprint.size = 30;
 		enemyBlueprint.speed = 5;
 		enemyBlueprint.maxBullets = 3;
